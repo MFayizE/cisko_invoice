@@ -1,6 +1,6 @@
 
 
-<div class="flex justify-end mb-3 px-20 mt-2 text-sm mt-10">
+<div class="flex justify-end mb-3 px-20  text-sm mt-10">
   <button (click)="openPDF()" class="bg-[#000103] px-8 py-3 rounded-md text-sm text-[#FFFEFE]">Export to
       PDF</button>
 </div>
@@ -353,7 +353,7 @@
           <td colspan="2" class="w-1/2 border-2 border-black p-2 ">
             <div class="flex justify-between">
               <div>
-                Add SGST
+                Add IGST
               </div>
               <div>
                 <input class=" border-2 border-gray-400 rounded-md p-2 w-max" formControlName="IGSTPercentage"
@@ -672,7 +672,7 @@
         <td colspan="2" class="w-1/2 border-[1px] border-black p-2 ">
           <div class="flex justify-between">
             <div>
-              Add CGST
+              Add CGST <span>{{createBillForm?.value.CGSTPercentage ? '(' + createBillForm?.value.CGSTPercentage + '%)' : ''}}</span>
             </div>
             <div>
               
@@ -690,7 +690,7 @@
 
           <div class="flex justify-between">
             <div>
-              Add SGST
+              Add SGST <span>{{createBillForm?.value.SGSTPercentage ? '(' + createBillForm?.value.SGSTPercentage + '%)' : ''}}</span>
             </div>
             <div>
              
@@ -722,7 +722,7 @@
         <td colspan="2" class="w-1/2 border-[1px] border-black p-2 ">
           <div class="flex justify-between">
             <div>
-              Add SGST
+              Add IGST <span>{{createBillForm?.value.IGSTPercentage ? '(' + createBillForm?.value.IGSTPercentage + '%)' : ''}}</span>
             </div>
             <div>
              
