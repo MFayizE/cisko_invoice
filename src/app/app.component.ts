@@ -36,7 +36,8 @@ export class AppComponent  implements OnInit {
   CGSTTaxAmount: number
   SGSTTaxAmount: number
   IGSTTaxAmount: number
-  amountInWords: string
+  amountInWords: string;
+  productLength: number
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -106,6 +107,56 @@ export class AppComponent  implements OnInit {
       PDF.save(`${this.createBillForm.value.invoiceNo}.pdf`);
     });
   }
+  public openPrint(): void {
+    let DATA: any = document.getElementById('printTemplate');
+    html2canvas(DATA, {
+      scale: 4,
+      allowTaint: true,
+      useCORS: true,
+    }).then((canvas) => {
+      const FILEURI = canvas.toDataURL('image/jpeg', 0.6); // convert to JPEG with compression level 0.6
+      let fileWidth = 210;
+      let fileHeight = (canvas.height * fileWidth) / canvas.width;
+      let PDF = new jsPDF('p', 'mm', 'a4');
+      let position = 0;
+      PDF.addImage(FILEURI, 'JPEG', 0, position, fileWidth, fileHeight);
+      const blobPDF = PDF.output('blob');
+      const objectUrl = URL.createObjectURL(blobPDF);
+      const newWindow = window.open(objectUrl, '_blank');
+      if (newWindow) {
+        newWindow.onload = () => {
+          URL.revokeObjectURL(objectUrl);
+          newWindow.print();
+        };
+      }
+    });
+  }
+
+  public sendToWhatsapp(): void {
+    let DATA: any = document.getElementById('printTemplate');
+    html2canvas(DATA, {
+      scale: 4,
+      allowTaint: true,
+      useCORS: true,
+    }).then((canvas) => {
+      const FILEURI = canvas.toDataURL('image/jpeg', 0.6); // convert to JPEG with compression level 0.6
+      let fileWidth = 210;
+      let fileHeight = (canvas.height * fileWidth) / canvas.width;
+      let PDF = new jsPDF('p', 'mm', 'a4');
+      let position = 0;
+      PDF.addImage(FILEURI, 'JPEG', 0, position, fileWidth, fileHeight);
+      const blobPDF = PDF.output('blob');
+      const formData = new FormData();
+      formData.append('file', blobPDF, 'my-pdf-file.pdf');
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', 'https://web.whatsapp.com/send?phone=');
+      xhr.onload = () => {
+        console.log(xhr.responseText);
+      };
+      xhr.send(formData);
+    });
+  }
+
   
 
   calculateTotal(index: number): void {
