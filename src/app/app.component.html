@@ -1,11 +1,9 @@
-
-
 <div class="flex justify-end mb-3 px-20  text-sm mt-10">
   <button (click)="openPDF()" class="bg-[#000103] px-8 py-3 rounded-md text-sm text-[#FFFEFE]">Export to
-      PDF</button>
+    PDF</button>
 </div>
 
-<form [formGroup]="createBillForm" >
+<form [formGroup]="createBillForm">
   <section class="px-20 text-sm mb-20">
     <table class="w-full border-collapse border-2 border-black">
       <tbody>
@@ -17,7 +15,7 @@
               </div>
               <div>
                 <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="invoiceNo"
-                  type="text" /></span>
+                    type="text" /></span>
               </div>
             </div>
           </td>
@@ -28,7 +26,7 @@
               </div>
               <div>
                 <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="transprtingMode"
-                  type="text" /></span>
+                    type="text" /></span>
               </div>
             </div>
           </td>
@@ -41,45 +39,45 @@
               </div>
               <div>
                 <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="reverseCharge"
-                  type="text" /></span>
+                    type="text" /></span>
               </div>
             </div>
           </td>
           <td colspan="3" class="w-1/2 border-2 border-black p-2">
-            
+
             <div class="flex gap-10 items-center">
               <div>
                 Vehicle Number :
               </div>
               <div>
                 <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="vehicleNumber"
-                  type="text" /></span>
+                    type="text" /></span>
               </div>
             </div>
           </td>
         </tr>
         <tr>
           <td colspan="3" class="w-1/2 border-2 border-black p-2">
-            
+
             <div class="flex gap-10 items-center">
               <div>
                 Invoice Date :
               </div>
               <div>
                 <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="invoiceDate"
-                  type="text" /></span>
+                    type="text" /></span>
               </div>
             </div>
           </td>
           <td colspan="3" class="w-1/2 border-2 border-black p-2">
-            
+
             <div class="flex gap-10 items-center">
               <div>
                 Place of Supply :
               </div>
               <div>
                 <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="placeOfSupply"
-                  type="text" /></span>
+                    type="text" /></span>
               </div>
             </div>
           </td>
@@ -94,26 +92,26 @@
         </tr>
         <tr>
           <td colspan="3" class="w-1/2 border-2 border-black p-2">
-              <div class="flex gap-10 items-center mb-5">
-                <div>
-                  Name :
-                </div>
-                <div>
-                  <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="receiverName"
+            <div class="flex gap-10 items-center mb-5">
+              <div>
+                Name :
+              </div>
+              <div>
+                <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="receiverName"
                     type="text" /></span>
-                </div>
               </div>
-  
-              
-              <div class="flex gap-10 items-center mb-5">
-                <div>
-                  Address :
-                </div>
-                <div>
-                  <span><textarea class=" border-2 border-gray-400 rounded-md p-1 w-full" formControlName="receiverAddress"
-                    type="text" ></textarea></span>
-                </div>
+            </div>
+
+
+            <div class="flex gap-10 items-center mb-5">
+              <div>
+                Address :
               </div>
+              <div>
+                <span><textarea class=" border-2 border-gray-400 rounded-md p-1 w-full"
+                    formControlName="receiverAddress" type="text"></textarea></span>
+              </div>
+            </div>
             <div>
               <div class="flex gap-10 items-center mb-5">
                 <div>
@@ -121,30 +119,30 @@
                 </div>
                 <div>
                   <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="receiverGSTIN"
-                    type="text" /></span>
+                      type="text" /></span>
                 </div>
               </div>
             </div>
             <div class="flex justify-between">
-                
-                <div class="flex gap-10 items-center ">
-                  <div>
-                    State :
-                  </div>
-                  <div>
-                    <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="receiverState"
-                      type="text" /></span>
-                  </div>
+
+              <div class="flex gap-10 items-center ">
+                <div>
+                  State :
                 </div>
-                <div class="flex gap-10 items-center">
-                  <div>
-                    State Code :
-                  </div>
-                  <div>
-                    <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="receiverStateCode"
+                <div>
+                  <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="receiverState"
                       type="text" /></span>
-                  </div>
                 </div>
+              </div>
+              <div class="flex gap-10 items-center">
+                <div>
+                  State Code :
+                </div>
+                <div>
+                  <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max"
+                      formControlName="receiverStateCode" type="text" /></span>
+                </div>
+              </div>
             </div>
           </td>
           <td colspan="3" class="w-1/2 border-2 border-black p-2">
@@ -154,40 +152,40 @@
               </div>
               <div>
                 <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="ConsigneeName"
-                  type="text" /></span>
+                    type="text" /></span>
               </div>
             </div>
 
-            
+
             <div class="flex gap-10 items-center mb-5">
               <div>
                 Address :
               </div>
               <div>
-                <span><textarea class=" border-2 border-gray-400 rounded-md p-1 w-full" formControlName="ConsigneeAddress"
-                  type="text" ></textarea></span>
+                <span><textarea class=" border-2 border-gray-400 rounded-md p-1 w-full"
+                    formControlName="ConsigneeAddress" type="text"></textarea></span>
               </div>
             </div>
-          <div>
-            <div class="flex gap-10 items-center mb-5">
-              <div>
-                GSTIN :
-              </div>
-              <div>
-                <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="ConsigneeGSTIN"
-                  type="text" /></span>
+            <div>
+              <div class="flex gap-10 items-center mb-5">
+                <div>
+                  GSTIN :
+                </div>
+                <div>
+                  <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="ConsigneeGSTIN"
+                      type="text" /></span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="flex justify-between">
-              
+            <div class="flex justify-between">
+
               <div class="flex gap-10 items-center ">
                 <div>
                   State :
                 </div>
                 <div>
                   <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="ConsigneeState"
-                    type="text" /></span>
+                      type="text" /></span>
                 </div>
               </div>
               <div class="flex gap-10 items-center">
@@ -195,12 +193,12 @@
                   State Code :
                 </div>
                 <div>
-                  <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="ConsigneeStateCode"
-                    type="text" /></span>
+                  <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max"
+                      formControlName="ConsigneeStateCode" type="text" /></span>
                 </div>
               </div>
-          </div>
-        </td>
+            </div>
+          </td>
         </tr>
         <tr>
           <td class="w-1/12 border-2 border-black p-2 font-bold text-center">
@@ -234,13 +232,20 @@
           </td>
           <td class="w-[40%] border-x-2 border-black p-2 font-bold text-center">
             <select class="pl-2 pt-1 outline-none border-none w-full" [formControl]="item.controls.product">
-              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (300ML)">CISKO PACKAGED DRINKING WATER (300ML)</option>
-              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (500ML)">CISKO PACKAGED DRINKING WATER (500ML)</option>
-              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (1L)">CISKO PACKAGED DRINKING WATER (1L)</option>
-              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (2L)">CISKO PACKAGED DRINKING WATER (2L)</option>
-              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (5L)">CISKO PACKAGED DRINKING WATER (5L)</option>
-              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (20L)">CISKO PACKAGED DRINKING WATER (20L)</option>
-              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (500L)">CISKO PACKAGED DRINKING WATER (500L)</option>
+              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (300ML)">CISKO
+                PACKAGED DRINKING WATER (300ML)</option>
+              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (500ML)">CISKO
+                PACKAGED DRINKING WATER (500ML)</option>
+              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (1L)">CISKO PACKAGED
+                DRINKING WATER (1L)</option>
+              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (2L)">CISKO PACKAGED
+                DRINKING WATER (2L)</option>
+              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (5L)">CISKO PACKAGED
+                DRINKING WATER (5L)</option>
+              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (20L)">CISKO
+                PACKAGED DRINKING WATER (20L)</option>
+              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (500L)">CISKO
+                PACKAGED DRINKING WATER (500L)</option>
             </select>
           </td>
           <td class="w-1/12 border-x-2 border-black p-2 font-bold text-center">
@@ -380,13 +385,13 @@
           <td colspan="3" class="w-1/2 border-2 border-black p-2 text-center">
             <div class="text-sm">
               Certified that the particulars given above are true and correct
-              
+
             </div>
             <div>
               For <span class="font-bold">CISKO PACKAGED DRINKING WATER</span>
             </div>
             <div class="mt-20  text-sm">
-              <span class="font-bold italic">Authorised Signatory</span> 
+              <span class="font-bold italic">Authorised Signatory</span>
             </div>
           </td>
 
@@ -401,92 +406,95 @@
 
 
 
-<h1 class="text-center text-lg font-bold">Preview</h1>
+<h1 class="text-center text-lg font-bold mb-4">Preview</h1>
+<section  id="printTemplate">
+  <div class="px-6">
+    <img class="object-contain" src="assets/cisko_header.png" alt="">
+  </div>
+  
+  <section class="px-10 text-xl ">
+    <table class="w-full border-collapse border-2 border-black">
+      <tbody>
+        <tr>
+          <td colspan="3" class="w-1/2 border-[1px]  border-black pb-6   p-2">
+            <div class="flex gap-10 items-center">
+              <div>
+                Invoice No:
+              </div>
+              <div>
+                <span>{{createBillForm.value.invoiceNo}}</span>
+              </div>
+            </div>
+          </td>
+          <td colspan="3" class="w-1/2 border-[1px] border-black pb-6 p-2">
+            <div class="flex gap-10 items-center">
+              <div>
+                Transprting Mode :
+              </div>
+              <div>
+                <span>{{createBillForm.value.transprtingMode}}</span>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" class="w-1/2 border-[1px] border-black pb-6 p-2">
+            <div class="flex gap-10 items-center">
+              <div>
+                Reverse Charge :
+              </div>
+              <div>
+                <span>{{createBillForm.value.reverseCharge}}</span>
+              </div>
+            </div>
+          </td>
+          <td colspan="3" class="w-1/2 border-[1px] border-black pb-6 p-2">
 
-<section class="p-5  align-middle" id="printTemplate">
-  <img class="object-contain" src="assets/cisko_header.png" alt="">
-  <table class="w-full border-collapse border-2 border-black">
-    <tbody>
-      <tr>
-        <td colspan="3" class="w-1/2 border-[1px]  border-black   p-2">
-          <div class="flex gap-10 items-center">
-            <div>
-              Invoice No:
+            <div class="flex gap-10 items-center">
+              <div>
+                Vehicle Number :
+              </div>
+              <div>
+                <span>{{createBillForm.value.vehicleNumber}}</span>
+              </div>
             </div>
-            <div>
-              <span>{{createBillForm.value.invoiceNo}}</span>
-            </div>
-          </div>
-        </td>
-        <td colspan="3" class="w-1/2 border-[1px] border-black p-2">
-          <div class="flex gap-10 items-center">
-            <div>
-              Transprting Mode :
-            </div>
-            <div>
-              <span>{{createBillForm.value.transprtingMode}}</span>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3" class="w-1/2 border-[1px] border-black p-2">
-          <div class="flex gap-10 items-center">
-            <div>
-              Reverse Charge :
-            </div>
-            <div>
-              <span>{{createBillForm.value.reverseCharge}}</span>
-            </div>
-          </div>
-        </td>
-        <td colspan="3" class="w-1/2 border-[1px] border-black p-2">
-          
-          <div class="flex gap-10 items-center">
-            <div>
-              Vehicle Number :
-            </div>
-            <div>
-              <span>{{createBillForm.value.vehicleNumber}}</span>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3" class="w-1/2 border-[1px] border-black p-2">
-          
-          <div class="flex gap-10 items-center">
-            <div>
-              Invoice Date :
-            </div>
-            <div>
-              <span>{{createBillForm.value.invoiceDate}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" class="w-1/2 border-[1px] border-black pb-6 p-2">
 
+            <div class="flex gap-10 items-center">
+              <div>
+                Invoice Date :
+              </div>
+              <div>
+                <span>{{createBillForm.value.invoiceDate}}</span>
+
+              </div>
             </div>
-          </div>
-        </td>
-        <td colspan="3" class="w-1/2 border-[1px] border-black p-2">
-          
-          <div class="flex gap-10 items-center">
-            <div>
-              Place of Supply :
+          </td>
+          <td colspan="3" class="w-1/2 border-[1px] border-black pb-6 p-2">
+
+            <div class="flex gap-10 items-center">
+              <div>
+                Place of Supply :
+              </div>
+              <div>
+                <span>{{createBillForm.value.placeOfSupply}}</span>
+              </div>
             </div>
-            <div>
-              <span>{{createBillForm.value.placeOfSupply}}</span>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3" class="w-1/2 border-[1px] border-black p-2 font-bold text-center">
-          Details of Receiver / Billed to
-        </td>
-        <td colspan="3" class="w-1/2 border-[1px] border-black p-2 font-bold text-center">
-          Details of Consignee / Shipped to
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3" class="w-1/2 border-[1px] border-black p-2">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" class="w-1/2 border-[1px] border-black pb-6 p-2 font-bold text-center">
+            Details of Receiver / Billed to
+          </td>
+          <td colspan="3" class="w-1/2 border-[1px] border-black pb-6 p-2 font-bold text-center">
+            Details of Consignee / Shipped to
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" class="w-1/2 border-[1px] border-black pb-6 p-2">
             <div class="flex gap-10 items-center mb-5">
               <div>
                 Name :
@@ -497,27 +505,27 @@
               </div>
             </div>
 
-            
-            <div class="flex gap-10 items-center mb-5">
+
+            <div class="flex gap-10  ">
               <div>
                 Address :
               </div>
-              <div>
+              <div class="h-44">
                 <span>{{createBillForm.value.receiverAddress}}</span>
               </div>
             </div>
-          <div>
-            <div class="flex gap-10 items-center mb-5">
-              <div>
-                GSTIN :
-              </div>
-              <div>
-                <span>{{createBillForm.value.receiverGSTIN}}</span>
+            <div>
+              <div class="flex gap-10 items-center mb-5">
+                <div>
+                  GSTIN :
+                </div>
+                <div>
+                  <span>{{createBillForm.value.receiverGSTIN}}</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="flex justify-between">
-              
+            <div class="flex justify-between">
+
               <div class="flex gap-10 items-center ">
                 <div>
                   State :
@@ -534,232 +542,237 @@
                   <span>{{createBillForm.value.receiverStateCode}}</span>
                 </div>
               </div>
-          </div>
-        </td>
-        <td colspan="3" class="w-1/2 border-[1px] border-black p-2">
-          <div class="flex gap-10 items-center mb-5">
-            <div>
-              Name :
             </div>
-            <div>
-              <span>{{createBillForm.value.ConsigneeName}}</span>
-
-            </div>
-          </div>
-
-          
-          <div class="flex gap-10 items-center mb-5">
-            <div>
-              Address :
-            </div>
-            <div>
-              <span>{{createBillForm.value.ConsigneeAddress}}</span>
-            </div>
-          </div>
-        <div>
-          <div class="flex gap-10 items-center mb-5">
-            <div>
-              GSTIN :
-            </div>
-            <div>
-              <span>{{createBillForm.value.ConsigneeGSTIN}}</span>
-            </div>
-          </div>
-        </div>
-        <div class="flex justify-between">
-            
-            <div class="flex gap-10 items-center ">
+          </td>
+          <td colspan="3" class="w-1/2 border-[1px] border-black pb-6 p-2">
+            <div class="flex gap-10 items-center mb-5">
               <div>
-                State :
+                Name :
               </div>
               <div>
-                <span>{{createBillForm.value.ConsigneeState}}</span>
+                <span>{{createBillForm.value.ConsigneeName}}</span>
+
               </div>
             </div>
-            <div class="flex gap-10 items-center">
+
+
+            <div class="flex gap-10  mb-5 ">
               <div>
-                State Code :
+                Address :
+              </div>
+              <div class="h-44">
+                <span>{{createBillForm.value.ConsigneeAddress}}</span>
+              </div>
+            </div>
+            <div>
+              <div class="flex gap-10 items-center mb-5">
+                <div>
+                  GSTIN :
+                </div>
+                <div>
+                  <span>{{createBillForm.value.ConsigneeGSTIN}}</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-between">
+
+              <div class="flex gap-10 items-center ">
+                <div>
+                  State :
+                </div>
+                <div>
+                  <span>{{createBillForm.value.ConsigneeState}}</span>
+                </div>
+              </div>
+              <div class="flex gap-10 items-center">
+                <div>
+                  State Code :
+                </div>
+                <div>
+                  <span>{{createBillForm.value.ConsigneeStateCode}}</span>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="w-1/12 border-[1px] border-black pb-6 p-2 text-center">
+            SlNo
+          </td>
+          <td class="w-1/3 border-[1px] border-black pb-6 p-2  text-center">
+            Description of Goods
+          </td>
+          <td class="w-1/12 border-[1px] border-black pb-6 p-2  text-center">
+            HSN Code
+          </td>
+          <td class="w-1/12 border-[1px] border-black pb-6 p-2  text-center">
+            Quantity
+          </td>
+          <td class="w-1/12 border-[1px] border-black pb-6 p-2  text-center">
+            Unit Price
+          </td>
+          <td class="w-full border-[1px] border-black pb-6 p-2  text-center">
+            Gross Value
+          </td>
+        </tr>
+        <tr *ngFor="let item of createBillForm.get('items')['controls']; let i=index" class="h-24">
+          <td class="w-1/12  border-black pb-6 p-2  text-center mt-4">
+            <div>
+              {{ i + 1 }}
+            </div>
+          </td>
+          <td class="w-[40%] border-x-[1px] border-black pb-6 p-2  text-center">
+            <span>{{item.value.product}}</span>
+
+          </td>
+          <td class="w-1/12 border-x-[1px] border-black pb-6 p-2  text-center">
+            <span>{{item.value.hsn}}</span>
+          </td>
+          <td class="w-1/12 border-x-[1px] border-black pb-6 p-2  text-center">
+            <span>{{item.value.quantity}}</span>
+          </td>
+          <td class="w-1/12 border-x-[1px] border-black pb-6 p-2  text-center">
+            <span>{{item.value.unit}}</span>
+          </td>
+          <td class="w-2/4 border-x-[1px] border-black pb-6 p-2 text-center">
+            {{item.value.total | currency:'INR':true}}
+          </td>
+        </tr>
+        <tr class="h-52" ngClas>
+          <td class="w-1/12  border-black pb-6 p-2 font-bold text-center mt-4">
+            <div>
+
+            </div>
+          </td>
+          <td class="w-[40%] border-x-[1px] border-black pb-6 p-2 font-bold text-center">
+
+
+          </td>
+          <td class="w-1/12 border-x-[1px] border-black pb-6 p-2 font-bold text-center">
+
+          </td>
+          <td class="w-1/12 border-x-[1px] border-black pb-6 p-2 font-bold text-center">
+
+          </td>
+          <td class="w-1/12 border-x-[1px] border-black pb-6 p-2 font-bold text-center">
+
+          </td>
+          <td class="w-2/4 border-x-[1px] border-black pb-6 p-2 font-bold text-center">
+
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="3" rowspan="3" class="w-1/2 border-[1px] border-black pb-6 p-2 ">
+            Amount in words: <span class="font-bold underline">{{amountInWords}}</span>
+          </td>
+
+          <td colspan="2" class="w-1/2 border-[1px] border-black pb-6 p-2 font-bold">
+            Total Amount excl. Tax
+          </td>
+          <td colspan="1" class="w-2/5 border-[1px] border-black pb-6 p-2 text-center ">
+            {{subTotal | currency:'INR':true}}
+          </td>
+
+        </tr>
+        <tr>
+
+          <td colspan="2" class="w-1/2 border-[1px] border-black pb-6 p-2 font-bold">
+            <div class="flex justify-between">
+              <div>
+                Add CGST <span>{{createBillForm?.value.CGSTPercentage ? '(' + createBillForm?.value.CGSTPercentage +
+                  '%)' : ''}}</span>
               </div>
               <div>
-                <span>{{createBillForm.value.ConsigneeStateCode}}</span>
+
               </div>
             </div>
-        </div>
-      </td>
-      </tr>
-      <tr>
-        <td class="w-1/12 border-[1px] border-black p-2 text-center">
-          SlNo
-        </td>
-        <td class="w-1/3 border-[1px] border-black p-2  text-center">
-          Description of Goods
-        </td>
-        <td class="w-1/12 border-[1px] border-black p-2  text-center">
-          HSN Code
-        </td>
-        <td class="w-1/12 border-[1px] border-black p-2  text-center">
-          Quantity
-        </td>
-        <td class="w-1/12 border-[1px] border-black p-2  text-center">
-          Unit Price
-        </td>
-        <td class="w-full border-[1px] border-black p-2  text-center">
-          Gross Value
-        </td>
-      </tr>
-      <tr *ngFor="let item of createBillForm.get('items')['controls']; let i=index" class="h-24">
-        <td class="w-1/12  border-black p-2  text-center mt-4">
-          <div>
-            {{ i + 1 }}
-          </div>
-        </td>
-        <td class="w-[40%] border-x-[1px] border-black p-2  text-center">
-          <span>{{item.value.product}}</span>
- 
-        </td>
-        <td class="w-1/12 border-x-[1px] border-black p-2  text-center">
-          <span>{{item.value.hsn}}</span>
-        </td>
-        <td class="w-1/12 border-x-[1px] border-black p-2  text-center">
-          <span>{{item.value.quantity}}</span>
-        </td>
-        <td class="w-1/12 border-x-[1px] border-black p-2  text-center">
-          <span>{{item.value.unit}}</span>
-        </td>
-        <td class="w-2/4 border-x-[1px] border-black p-2 text-center">
-          {{item.value.total | currency:'INR':true}}
-        </td>
-      </tr>
-      <tr class="h-44" ngClas>
-        <td class="w-1/12  border-black p-2 font-bold text-center mt-4">
-          <div>
-          
-          </div>
-        </td>
-        <td class="w-[40%] border-x-[1px] border-black p-2 font-bold text-center">
-          
- 
-        </td>
-        <td class="w-1/12 border-x-[1px] border-black p-2 font-bold text-center">
-          
-        </td>
-        <td class="w-1/12 border-x-[1px] border-black p-2 font-bold text-center">
-          
-        </td>
-        <td class="w-1/12 border-x-[1px] border-black p-2 font-bold text-center">
-         
-        </td>
-        <td class="w-2/4 border-x-[1px] border-black p-2 font-bold text-center">
-         
-        </td>
-      </tr>
 
-      <tr>
-        <td colspan="3" rowspan="3" class="w-1/2 border-[1px] border-black p-2 ">
-          Amount in words: <span class="font-bold underline">{{amountInWords}}</span>
-        </td>
+          </td>
+          <td colspan="1" class="w-2/5 border-[1px] border-black pb-6 p-2 text-center ">
+            {{CGSTTaxAmount | currency:'INR':true}}
+          </td>
+        </tr>
+        <tr>
 
-        <td colspan="2" class="w-1/2 border-[1px] border-black p-2 font-bold">
-          Total Amount excl. Tax
-        </td>
-        <td colspan="1" class="w-2/5 border-[1px] border-black p-2 text-center ">
-          {{subTotal | currency:'INR':true}}
-        </td>
+          <td colspan="2" class="w-1/2 border-[1px] border-black pb-6 p-2 font-bold">
 
-      </tr>
-      <tr>
+            <div class="flex justify-between">
+              <div>
+                Add SGST <span>{{createBillForm?.value.SGSTPercentage ? '(' + createBillForm?.value.SGSTPercentage +
+                  '%)' : ''}}</span>
+              </div>
+              <div>
 
-        <td colspan="2" class="w-1/2 border-[1px] border-black p-2 font-bold">
-          <div class="flex justify-between">
+              </div>
+            </div>
+          </td>
+          <td colspan="1" class="w-2/5 border-[1px] border-black pb-6 p-2  text-center ">
+            {{SGSTTaxAmount | currency:'INR':true}}
+          </td>
+        </tr>
+
+
+        <tr>
+          <td colspan="3" rowspan="3" class="w-1/2 border-[1px] border-black pb-6 p-2 text-center">
             <div>
-              Add CGST <span>{{createBillForm?.value.CGSTPercentage ? '(' + createBillForm?.value.CGSTPercentage + '%)' : ''}}</span>
+              Bank Details: CISKO PRAVASI SERVICES LLP
             </div>
             <div>
-              
-            </div>
-          </div>
-
-        </td>
-        <td colspan="1" class="w-2/5 border-[1px] border-black p-2 text-center ">
-          {{CGSTTaxAmount | currency:'INR':true}}
-        </td>
-      </tr>
-      <tr>
-
-        <td colspan="2" class="w-1/2 border-[1px] border-black p-2 font-bold">
-
-          <div class="flex justify-between">
-            <div>
-              Add SGST <span>{{createBillForm?.value.SGSTPercentage ? '(' + createBillForm?.value.SGSTPercentage + '%)' : ''}}</span>
+              Account Number: 20220000044308
             </div>
             <div>
-             
-            </div>
-          </div>
-        </td>
-        <td colspan="1" class="w-2/5 border-[1px] border-black p-2  text-center ">
-          {{SGSTTaxAmount | currency:'INR':true}}
-        </td>
-      </tr>
-
-
-      <tr>
-        <td colspan="3" rowspan="3" class="w-1/2 border-[1px] border-black p-2 text-center">
-          <div>
-            Bank Details: CISKO PRAVASI SERVICES LLP
-          </div>
-          <div>
-            Account Number: 20220000044308
-          </div>
-          <div>
-            IFSC NO: ESMF0001555
-          </div>
-          <div>
-            ESAF Small Finance Bank, Thirunavaya, Kerala
-          </div>
-        </td>
-
-        <td colspan="2" class="w-1/2 border-[1px] border-black p-2 font-bold">
-          <div class="flex justify-between">
-            <div>
-              Add IGST <span>{{createBillForm?.value.IGSTPercentage ? '(' + createBillForm?.value.IGSTPercentage + '%)' : ''}}</span>
+              IFSC NO: ESMF0001555
             </div>
             <div>
-             
+              ESAF Small Finance Bank, Thirunavaya, Kerala
             </div>
-          </div>
-        </td>
-        <td colspan="1" class="w-2/5 border-[1px] border-black p-2 text-center ">
-          {{IGSTTaxAmount | currency:'INR':true}}
-        </td>
+          </td>
 
-      </tr>
-      <tr>
+          <td colspan="2" class="w-1/2 border-[1px] border-black pb-6 p-2 font-bold">
+            <div class="flex justify-between">
+              <div>
+                Add IGST <span>{{createBillForm?.value.IGSTPercentage ? '(' + createBillForm?.value.IGSTPercentage +
+                  '%)' : ''}}</span>
+              </div>
+              <div>
 
-        <td colspan="2" class="w-1/2 border-[1px] border-black p-2 font-bold">
-          Total incl. Tax
-        </td>
-        <td colspan="1" class="w-2/5 border-[1px] border-black p-2 text-center ">
-          {{totalAmountWithTax | currency:'INR':true}}
-        </td>
-      </tr>
-      <tr>
+              </div>
+            </div>
+          </td>
+          <td colspan="1" class="w-2/5 border-[1px] border-black pb-6 p-2 text-center ">
+            {{IGSTTaxAmount | currency:'INR':true}}
+          </td>
 
-        <td colspan="3" class="w-1/2 border-[1px] border-black p-2 text-center">
-          <div class="text-sm">
-            Certified that the particulars given above are true and correct
-            
-          </div>
-          <div>
-            For <span class="font-bold">CISKO PACKAGED DRINKING WATER</span>
-          </div>
-          <div class="mt-20  text-sm mb-3">
-            <span class="font-bold italic">Authorised Signatory</span> 
-          </div>
-        </td>
+        </tr>
+        <tr>
 
-      </tr>
+          <td colspan="2" class="w-1/2 border-[1px] border-black pb-6 p-2 font-bold">
+            Total incl. Tax
+          </td>
+          <td colspan="1" class="w-2/5 border-[1px] border-black pb-6 p-2 text-center ">
+            {{totalAmountWithTax | currency:'INR':true}}
+          </td>
+        </tr>
+        <tr>
 
-    </tbody>
-  </table>
+          <td colspan="3" class="w-1/2 border-[1px] border-black pb-6 p-2 text-center">
+            <div class="text-sm">
+              Certified that the particulars given above are true and correct
+
+            </div>
+            <div>
+              For <span class="font-bold">CISKO PACKAGED DRINKING WATER</span>
+            </div>
+            <div class="mt-20  text-sm mb-3">
+              <span class="font-bold italic">Authorised Signatory</span>
+            </div>
+          </td>
+
+        </tr>
+
+      </tbody>
+    </table>
+  </section>
+
 </section>
