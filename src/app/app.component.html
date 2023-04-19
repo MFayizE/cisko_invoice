@@ -5,6 +5,27 @@
 
 <form [formGroup]="createBillForm">
   <section class="px-20 text-sm mb-20">
+    <section class="mb-4">
+      <div class="flex gap-10 items-center mb-4">
+        <div>
+          State : 
+        </div>
+        <div>
+          <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="state"
+              type="text" /></span>
+        </div>
+      </div>
+      <div class="flex gap-10 items-center">
+        <div>
+          State Code :
+        </div>
+        <div>
+          <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="stateCode"
+              type="text" /></span>
+        </div>
+      </div>
+    </section>
+      
     <table class="w-full border-collapse border-2 border-black">
       <tbody>
         <tr>
@@ -408,8 +429,24 @@
 
 <h1 class="text-center text-lg font-bold mb-4">Preview</h1>
 <section  id="printTemplate">
-  <div class="px-6">
+  <div class="px-6 relative ">
     <img class="object-contain" src="assets/cisko_header.png" alt="">
+    <div class="absolute  bottom-20 left-10 flex text-xl gap-10 items-center">
+      <div>
+        State :
+      </div>
+      <div>
+        <span>{{createBillForm.value.state}}</span>
+      </div>
+    </div>
+    <div class="absolute  bottom-12 left-10 flex text-xl gap-10 items-center">
+      <div>
+        State Code: 
+      </div>
+      <div>
+        <span>{{createBillForm.value.stateCode}}</span>
+      </div>
+    </div>
   </div>
   
   <section class="px-10 text-xl ">
