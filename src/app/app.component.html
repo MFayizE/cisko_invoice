@@ -1,6 +1,8 @@
-<div class="flex justify-end mb-3 px-20  text-sm mt-10">
+<div class="flex justify-end mb-3 px-20  text-sm mt-10 gap-4">
   <button (click)="openPDF()" class="bg-[#000103] px-8 py-3 rounded-md text-sm text-[#FFFEFE]">Export to
     PDF</button>
+    <!-- <button (click)="sendToWhatsapp()" class="bg-[#000103] px-8 py-3 rounded-md text-sm text-[#FFFEFE]">Sent to Whatsapp</button> -->
+    <button (click)="openPrint()" class="bg-[#000103] px-8 py-3 rounded-md text-sm text-[#FFFEFE]">Print</button>
 </div>
 
 <form [formGroup]="createBillForm">
@@ -652,7 +654,7 @@
             Gross Value
           </td>
         </tr>
-        <tr *ngFor="let item of createBillForm.get('items')['controls']; let i=index" class="h-10">
+        <tr *ngFor="let item of createBillForm.get('items')['controls']; let i=index" class="h-4">
           <td class="w-1/12  border-black pb-6 p-2  text-center mt-4">
             <div>
               {{ i + 1 }}
@@ -675,7 +677,7 @@
             {{item.value.total | currency:'INR':true}}
           </td>
         </tr>
-        <tr class="" [ngClass]="this.items.length > 6 ? '': 'h-52'">
+        <tr class="" [ngClass]="this.items.length > 3 ? '': 'h-44'">
           <td class="w-1/12  border-black pb-6 p-2 font-bold text-center mt-4">
             <div>
 
