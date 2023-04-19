@@ -652,7 +652,7 @@
             Gross Value
           </td>
         </tr>
-        <tr *ngFor="let item of createBillForm.get('items')['controls']; let i=index" class="h-24">
+        <tr *ngFor="let item of createBillForm.get('items')['controls']; let i=index" class="h-10">
           <td class="w-1/12  border-black pb-6 p-2  text-center mt-4">
             <div>
               {{ i + 1 }}
@@ -675,7 +675,7 @@
             {{item.value.total | currency:'INR':true}}
           </td>
         </tr>
-        <tr class="h-52" ngClas>
+        <tr class="" [ngClass]="this.items.length > 6 ? '': 'h-52'">
           <td class="w-1/12  border-black pb-6 p-2 font-bold text-center mt-4">
             <div>
 
