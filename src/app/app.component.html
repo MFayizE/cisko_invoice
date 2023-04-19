@@ -403,7 +403,7 @@
 
 <h1 class="text-center text-lg font-bold">Preview</h1>
 
-<section class="p-20 text-sm align-middle" id="printTemplate">
+<section class="p-5  align-middle" id="printTemplate">
   <img class="object-contain" src="assets/cisko_header.png" alt="">
   <table class="w-full border-collapse border-2 border-black">
     <tbody>
@@ -588,49 +588,49 @@
       </td>
       </tr>
       <tr>
-        <td class="w-1/12 border-[1px] border-black p-2 font-bold text-center">
+        <td class="w-1/12 border-[1px] border-black p-2 text-center">
           SlNo
         </td>
-        <td class="w-1/3 border-[1px] border-black p-2 font-bold text-center">
+        <td class="w-1/3 border-[1px] border-black p-2  text-center">
           Description of Goods
         </td>
-        <td class="w-1/12 border-[1px] border-black p-2 font-bold text-center">
+        <td class="w-1/12 border-[1px] border-black p-2  text-center">
           HSN Code
         </td>
-        <td class="w-1/12 border-[1px] border-black p-2 font-bold text-center">
+        <td class="w-1/12 border-[1px] border-black p-2  text-center">
           Quantity
         </td>
-        <td class="w-1/12 border-[1px] border-black p-2 font-bold text-center">
+        <td class="w-1/12 border-[1px] border-black p-2  text-center">
           Unit Price
         </td>
-        <td class="w-full border-[1px] border-black p-2 font-bold text-center">
+        <td class="w-full border-[1px] border-black p-2  text-center">
           Gross Value
         </td>
       </tr>
       <tr *ngFor="let item of createBillForm.get('items')['controls']; let i=index" class="h-24">
-        <td class="w-1/12  border-black p-2 font-bold text-center mt-4">
+        <td class="w-1/12  border-black p-2  text-center mt-4">
           <div>
             {{ i + 1 }}
           </div>
         </td>
-        <td class="w-[40%] border-x-[1px] border-black p-2 font-bold text-center">
+        <td class="w-[40%] border-x-[1px] border-black p-2  text-center">
           <span>{{item.value.product}}</span>
  
         </td>
-        <td class="w-1/12 border-x-[1px] border-black p-2 font-bold text-center">
+        <td class="w-1/12 border-x-[1px] border-black p-2  text-center">
           <span>{{item.value.hsn}}</span>
         </td>
-        <td class="w-1/12 border-x-[1px] border-black p-2 font-bold text-center">
+        <td class="w-1/12 border-x-[1px] border-black p-2  text-center">
           <span>{{item.value.quantity}}</span>
         </td>
-        <td class="w-1/12 border-x-[1px] border-black p-2 font-bold text-center">
+        <td class="w-1/12 border-x-[1px] border-black p-2  text-center">
           <span>{{item.value.unit}}</span>
         </td>
-        <td class="w-2/4 border-x-[1px] border-black p-2 font-bold text-center">
+        <td class="w-2/4 border-x-[1px] border-black p-2 text-center">
           {{item.value.total | currency:'INR':true}}
         </td>
       </tr>
-      <tr class="h-64">
+      <tr class="h-44" ngClas>
         <td class="w-1/12  border-black p-2 font-bold text-center mt-4">
           <div>
           
@@ -659,17 +659,17 @@
           Amount in words: <span class="font-bold underline">{{amountInWords}}</span>
         </td>
 
-        <td colspan="2" class="w-1/2 border-[1px] border-black p-2 ">
+        <td colspan="2" class="w-1/2 border-[1px] border-black p-2 font-bold">
           Total Amount excl. Tax
         </td>
-        <td colspan="1" class="w-2/5 border-[1px] border-black p-2 text-center font-bold">
+        <td colspan="1" class="w-2/5 border-[1px] border-black p-2 text-center ">
           {{subTotal | currency:'INR':true}}
         </td>
 
       </tr>
       <tr>
 
-        <td colspan="2" class="w-1/2 border-[1px] border-black p-2 ">
+        <td colspan="2" class="w-1/2 border-[1px] border-black p-2 font-bold">
           <div class="flex justify-between">
             <div>
               Add CGST <span>{{createBillForm?.value.CGSTPercentage ? '(' + createBillForm?.value.CGSTPercentage + '%)' : ''}}</span>
@@ -680,13 +680,13 @@
           </div>
 
         </td>
-        <td colspan="1" class="w-2/5 border-[1px] border-black p-2 text-center font-bold">
+        <td colspan="1" class="w-2/5 border-[1px] border-black p-2 text-center ">
           {{CGSTTaxAmount | currency:'INR':true}}
         </td>
       </tr>
       <tr>
 
-        <td colspan="2" class="w-1/2 border-[1px] border-black p-2 ">
+        <td colspan="2" class="w-1/2 border-[1px] border-black p-2 font-bold">
 
           <div class="flex justify-between">
             <div>
@@ -697,7 +697,7 @@
             </div>
           </div>
         </td>
-        <td colspan="1" class="w-2/5 border-[1px] border-black p-2  text-center font-bold ">
+        <td colspan="1" class="w-2/5 border-[1px] border-black p-2  text-center ">
           {{SGSTTaxAmount | currency:'INR':true}}
         </td>
       </tr>
@@ -719,7 +719,7 @@
           </div>
         </td>
 
-        <td colspan="2" class="w-1/2 border-[1px] border-black p-2 ">
+        <td colspan="2" class="w-1/2 border-[1px] border-black p-2 font-bold">
           <div class="flex justify-between">
             <div>
               Add IGST <span>{{createBillForm?.value.IGSTPercentage ? '(' + createBillForm?.value.IGSTPercentage + '%)' : ''}}</span>
@@ -729,17 +729,17 @@
             </div>
           </div>
         </td>
-        <td colspan="1" class="w-2/5 border-[1px] border-black p-2 text-center font-bold">
+        <td colspan="1" class="w-2/5 border-[1px] border-black p-2 text-center ">
           {{IGSTTaxAmount | currency:'INR':true}}
         </td>
 
       </tr>
       <tr>
 
-        <td colspan="2" class="w-1/2 border-[1px] border-black p-2 ">
+        <td colspan="2" class="w-1/2 border-[1px] border-black p-2 font-bold">
           Total incl. Tax
         </td>
-        <td colspan="1" class="w-2/5 border-[1px] border-black p-2 text-center font-bold">
+        <td colspan="1" class="w-2/5 border-[1px] border-black p-2 text-center ">
           {{totalAmountWithTax | currency:'INR':true}}
         </td>
       </tr>
