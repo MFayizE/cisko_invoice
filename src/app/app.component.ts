@@ -64,6 +64,10 @@ export class AppComponent  implements OnInit {
       ConsigneeGSTIN: [''],
       ConsigneeState: [''],
       ConsigneeStateCode: [''],
+      state: [''],
+      stateCode: [''],
+
+
 
 
 
