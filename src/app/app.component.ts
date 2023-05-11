@@ -27,12 +27,24 @@ const toWords = new ToWords({
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent  implements OnInit {
-  
+export class AppComponent implements OnInit {
+  vendorList = [
+    {
+      id: 1,
+      name: "Green City Aqua Private Limited",
+      address: "Room No: 38/351, Green City Building near Narasimha Temple, Annara, Tirur, Malappuram, Kerala - 676101",
+      GSTIN: "32AAJCG5380PIZ4", state: "Kerala", stateCode: "32"
+    },
+    {
+      id: 2,
+      name: "Apas Aqua Marketing",
+      address: "Poongottukulam, Near Ettirikadavu Bridge - 8606340000",
+    }
+  ]
   title = 'cisko_invoice';
   createBillForm: FormGroup;
   subTotal: number
-  totalAmountWithTax:number
+  totalAmountWithTax: number
   CGSTTaxAmount: number
   SGSTTaxAmount: number
   IGSTTaxAmount: number
@@ -67,6 +79,9 @@ export class AppComponent  implements OnInit {
       ConsigneeStateCode: [''],
       state: [''],
       stateCode: [''],
+      isReceiverSelect : false,
+      isConsigneeSelect : false,
+
 
 
 
@@ -80,14 +95,15 @@ export class AppComponent  implements OnInit {
   get items(): FormArray {
     return this.createBillForm.get('items') as FormArray;
   }
-  
+
   initItem() {
     return this.fb.group({
       product: [''],
       quantity: [0],
       hsn: [''],
       unit: [0],
-      total: [0]
+      total: [0],
+      isSelect: true
     });
   }
 
@@ -157,7 +173,7 @@ export class AppComponent  implements OnInit {
     });
   }
 
-  
+
 
   calculateTotal(index: number): void {
     const items = this.createBillForm.get('items') as FormArray;
@@ -185,7 +201,7 @@ export class AppComponent  implements OnInit {
     // item.controls.tax.setValue(+item.controls.tax.value);
   }
 
-  addTax(){
+  addTax() {
     console.log('this.subTotal: ', this.subTotal);
     this.CGSTTaxAmount = (this.subTotal * (this.createBillForm.value.CGSTPercentage / 100))
     this.SGSTTaxAmount = (this.subTotal * (this.createBillForm.value.SGSTPercentage / 100))
@@ -211,5 +227,75 @@ export class AppComponent  implements OnInit {
   removeItem(index: number): void {
     const control = <FormArray>this.createBillForm.get('items');
     control.removeAt(index);
+  }
+
+
+  onChangeReciever(event: Event){
+    this.createBillForm.controls["receiverGSTIN"].patchValue('')
+    this.createBillForm.controls["receiverAddress"].patchValue('')
+    this.createBillForm.controls["receiverName"].patchValue('')
+    this.createBillForm.controls["receiverState"].patchValue('')
+    this.createBillForm.controls["receiverStateCode"].patchValue('')
+
+    const target = event.target as HTMLSelectElement;
+    const value = Number(target.value);
+    const foundData = this.vendorList.filter((item) => item.id === value)
+    
+    if(foundData[0]?.GSTIN){
+      this.createBillForm.controls["receiverGSTIN"].patchValue(foundData[0]?.GSTIN)
+    }
+    if(foundData[0]?.address){
+      this.createBillForm.controls["receiverAddress"].patchValue(foundData[0]?.address)
+
+    }
+    if(foundData[0]?.name){
+      this.createBillForm.controls["receiverName"].patchValue(foundData[0]?.name)
+    }
+    if(foundData[0]?.state){
+      this.createBillForm.controls["receiverState"].patchValue(foundData[0]?.state)
+
+    }
+    if(foundData[0]?.stateCode){
+      this.createBillForm.controls["receiverStateCode"].patchValue(foundData[0]?.stateCode)
+
+    }
+
+    
+    // Do something with the selected receiver
+  
+  }
+  onChangeConsignee(event: Event){
+    this.createBillForm.controls["ConsigneeGSTIN"].patchValue('')
+    this.createBillForm.controls["ConsigneeAddress"].patchValue('')
+    this.createBillForm.controls["ConsigneeName"].patchValue('')
+    this.createBillForm.controls["ConsigneeState"].patchValue('')
+    this.createBillForm.controls["ConsigneeStateCode"].patchValue('')
+
+    const target = event.target as HTMLSelectElement;
+    const value = Number(target.value);
+    const foundData = this.vendorList.filter((item) => item.id === value)
+    
+    if(foundData[0]?.GSTIN){
+      this.createBillForm.controls["ConsigneeGSTIN"].patchValue(foundData[0]?.GSTIN)
+    }
+    if(foundData[0]?.address){
+      this.createBillForm.controls["ConsigneeAddress"].patchValue(foundData[0]?.address)
+
+    }
+    if(foundData[0]?.name){
+      this.createBillForm.controls["ConsigneeName"].patchValue(foundData[0]?.name)
+    }
+    if(foundData[0]?.state){
+      this.createBillForm.controls["ConsigneeState"].patchValue(foundData[0]?.state)
+
+    }
+    if(foundData[0]?.stateCode){
+      this.createBillForm.controls["ConsigneeStateCode"].patchValue(foundData[0]?.stateCode)
+
+    }
+
+    
+    // Do something with the selected receiver
+  
   }
 }

@@ -1,8 +1,8 @@
 <div class="flex justify-end mb-3 px-20  text-sm mt-10 gap-4">
   <button (click)="openPDF()" class="bg-[#000103] px-8 py-3 rounded-md text-sm text-[#FFFEFE]">Export to
     PDF</button>
-    <!-- <button (click)="sendToWhatsapp()" class="bg-[#000103] px-8 py-3 rounded-md text-sm text-[#FFFEFE]">Sent to Whatsapp</button> -->
-    <button (click)="openPrint()" class="bg-[#000103] px-8 py-3 rounded-md text-sm text-[#FFFEFE]">Print</button>
+  <!-- <button (click)="sendToWhatsapp()" class="bg-[#000103] px-8 py-3 rounded-md text-sm text-[#FFFEFE]">Sent to Whatsapp</button> -->
+  <button (click)="openPrint()" class="bg-[#000103] px-8 py-3 rounded-md text-sm text-[#FFFEFE]">Print</button>
 </div>
 
 <form [formGroup]="createBillForm">
@@ -10,7 +10,7 @@
     <section class="mb-4">
       <div class="flex gap-10 items-center mb-4">
         <div>
-          State : 
+          State :
         </div>
         <div>
           <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="state"
@@ -27,7 +27,7 @@
         </div>
       </div>
     </section>
-      
+
     <table class="w-full border-collapse border-2 border-black">
       <tbody>
         <tr>
@@ -117,22 +117,38 @@
           <td colspan="3" class="w-1/2 border-2 border-black p-2">
             <div class="flex gap-10 items-center mb-5">
               <div>
-                Name :
+                <select class="pl-2 pt-1 px-3 w-full" formControlName="isReceiverSelect">
+                  <option class=" " [ngValue]="true" >
+                    Select</option>
+                  <option class=" "  [ngValue]="false">
+                    Input</option>
+                    </select>
               </div>
               <div>
+                Name :
+              </div>
+              <div *ngIf="!this.createBillForm.value.isReceiverSelect">
                 <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="receiverName"
                     type="text" /></span>
+              </div>
+              <div *ngIf="this.createBillForm.value.isReceiverSelect" >
+                <select class="pl-2 pt-1 px-3 w-full" (change)="onChangeReciever($event)">
+                  <option value="">Choose</option>
+                  <option class=" " *ngFor="let items of vendorList; let i = index" [value]="items.id">
+                    {{items.name}}
+                  </option>
+                </select>
               </div>
             </div>
 
 
             <div class="flex gap-10 items-center mb-5">
               <div>
-                Address :
+                Address
               </div>
-              <div>
-                <span><textarea class=" border-2 border-gray-400 rounded-md p-1 w-full"
-                    formControlName="receiverAddress" type="text"></textarea></span>
+              <div class="w-full">
+                <textarea class=" border-2 border-gray-400 rounded-md p-1 w-full"
+                    formControlName="receiverAddress" type="text"></textarea>
               </div>
             </div>
             <div>
@@ -171,11 +187,27 @@
           <td colspan="3" class="w-1/2 border-2 border-black p-2">
             <div class="flex gap-10 items-center mb-5">
               <div>
-                Name :
+                <select class="pl-2 pt-1 px-3 w-full" formControlName="isConsigneeSelect">
+                  <option class=" " [ngValue]="true" >
+                    Select</option>
+                  <option class=" "  [ngValue]="false">
+                    Input</option>
+                    </select>
               </div>
               <div>
+                Name :
+              </div>
+              <div *ngIf="!this.createBillForm.value.isConsigneeSelect" >
                 <span><input class=" border-2 border-gray-400 rounded-md p-1 w-max" formControlName="ConsigneeName"
                     type="text" /></span>
+              </div>
+              <div *ngIf="this.createBillForm.value.isConsigneeSelect" >
+                <select class="pl-2 pt-1 px-3 w-full" (change)="onChangeConsignee($event)">
+                  <option value="">Choose</option>
+                  <option class=" " *ngFor="let items of vendorList; let i = index" [value]="items.id">
+                    {{items.name}}
+                  </option>
+                </select>
               </div>
             </div>
 
@@ -184,7 +216,7 @@
               <div>
                 Address :
               </div>
-              <div>
+              <div class="w-full">
                 <span><textarea class=" border-2 border-gray-400 rounded-md p-1 w-full"
                     formControlName="ConsigneeAddress" type="text"></textarea></span>
               </div>
@@ -245,31 +277,49 @@
         </tr>
         <tr *ngFor="let item of createBillForm.get('items')['controls']; let i=index">
           <td class="w-1/12  border-black p-2 font-bold text-center flex justify-between  gap-3 mt-4">
-            <div class="font-semibold  text-left "><span class="material-symbols-rounded text-[#FA003F] cursor-pointer"
+            <div class="font-semibold  text-left text-xs"><span class="material-symbols-rounded text-[#FA003F] cursor-pointer"
                 (click)="removeItem(i)">
                 disabled_by_default
               </span></div>
             <div>
               {{ i + 1 }}
             </div>
+            <div>
+              <select class="pl-2 pt-1 px-3 w-full" [formControl]="item.controls.isSelect">
+                <option class=" " [ngValue]="true" >
+                  Select</option>
+                <option class=" "  [ngValue]="false">
+                  Input</option>
+                  </select>
+            </div>
           </td>
           <td class="w-[40%] border-x-2 border-black p-2 font-bold text-center">
-            <select class="pl-2 pt-1 outline-none border-none w-full" [formControl]="item.controls.product">
-              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (300ML)">CISKO
-                PACKAGED DRINKING WATER (300ML)</option>
-              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (500ML)">CISKO
-                PACKAGED DRINKING WATER (500ML)</option>
-              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (1L)">CISKO PACKAGED
-                DRINKING WATER (1L)</option>
-              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (2L)">CISKO PACKAGED
-                DRINKING WATER (2L)</option>
-              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (5L)">CISKO PACKAGED
-                DRINKING WATER (5L)</option>
-              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (20L)">CISKO
-                PACKAGED DRINKING WATER (20L)</option>
-              <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (500L)">CISKO
-                PACKAGED DRINKING WATER (500L)</option>
-            </select>
+            
+            <div *ngIf="item.value.isSelect">
+              <select class="pl-2 pt-1 outline-none border-none w-full" [formControl]="item.controls.product">
+                <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (300ML)">
+                  CISKO PACKAGED DRINKING WATER (300ML)</option>
+                <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (500ML)">
+                  CISKO PACKAGED DRINKING WATER (500ML)</option>
+                <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (1L)">
+                  CISKO PACKAGED DRINKING WATER (1L)</option>
+                <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (2L)">
+                  CISKO PACKAGED DRINKING WATER (2L)</option>
+                <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (5L)">
+                  CISKO PACKAGED DRINKING WATER (5L)</option>
+                <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (20L)">
+                  CISKO PACKAGED DRINKING WATER (20L)</option>
+                <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (500L)">
+                  CISKO PACKAGED DRINKING WATER (500L)</option>
+                <option class=" outline-none border-none w-full" value="CISKO PACKAGED DRINKING WATER (500L)">
+                  CISKO PACKAGED DRINKING WATER CAN (20L)</option>
+              </select>
+            </div>
+            <div *ngIf="!item.value.isSelect">
+              <input class=" border-2 border-gray-400 rounded-md p-2 w-full" [formControl]="item.controls.product"
+              type="text" />
+            </div>
+
           </td>
           <td class="w-1/12 border-x-2 border-black p-2 font-bold text-center">
             <input class=" border-2 border-gray-400 rounded-md p-2 w-max" [formControl]="item.controls.hsn"
@@ -430,7 +480,7 @@
 
 
 <h1 class="text-center text-lg font-bold mb-4">Preview</h1>
-<section  id="printTemplate">
+<section id="printTemplate">
   <div class="px-6 relative ">
     <img class="object-contain" src="assets/cisko_header.png" alt="">
     <div class="absolute  bottom-20 left-10 flex text-xl gap-10 items-center">
@@ -443,14 +493,14 @@
     </div>
     <div class="absolute  bottom-12 left-10 flex text-xl gap-10 items-center">
       <div>
-        State Code: 
+        State Code:
       </div>
       <div>
         <span>{{createBillForm.value.stateCode}}</span>
       </div>
     </div>
   </div>
-  
+
   <section class="px-10 text-xl ">
     <table class="w-full border-collapse border-2 border-black">
       <tbody>
@@ -595,12 +645,12 @@
             </div>
 
 
-            <div class="flex gap-10  mb-5 ">
-              <div>
+            <div class="flex gap-10  mb-5 h-44">
+              <div >
                 Address :
               </div>
-              <div class="h-44">
-                <span>{{createBillForm.value.ConsigneeAddress}}</span>
+              <div class=" ">
+                {{createBillForm.value.ConsigneeAddress}}
               </div>
             </div>
             <div>
