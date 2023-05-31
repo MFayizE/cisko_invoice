@@ -39,6 +39,12 @@ export class AppComponent implements OnInit {
       id: 2,
       name: "Apas Aqua Marketing",
       address: "Poongottukulam, Near Ettirikadavu Bridge - 8606340000",
+    },
+    {
+      id: 3,
+      name: "Cisko Pravasi Services LLP",
+      address: "B:NO: 6/396ABC, Beeranchira, Vettom Pallipuram P.O, Triprangode, Malappuram, Kerala - 676102",
+      GSTIN: "32AAPFC6390L1Z0", state: "Kerala", stateCode: "32"
     }
   ]
   title = 'cisko_invoice';
