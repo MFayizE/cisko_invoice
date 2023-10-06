@@ -45,6 +45,18 @@ export class AppComponent implements OnInit {
       name: "Cisko Pravasi Services LLP",
       address: "B:NO: 6/396ABC, Beeranchira, Vettom Pallipuram P.O, Triprangode, Malappuram, Kerala - 676102",
       GSTIN: "32AAPFC6390L1Z0", state: "Kerala", stateCode: "32"
+    },
+    {
+      id: 4,
+      name: "Green City Distributors",
+      address: "Door No: XXIV/224, A14, Green City Building, Annara, Tirur - 676101",
+      GSTIN: "32AFDPA5673B1Z4", state: "Kerala", stateCode: "32"
+    },
+    {
+      id: 5,
+      name: "GreenCity Distributors",
+      address: "38/448B, Near Masjid, North Annara, Tirur - 676101",
+      GSTIN: "32AFDPA5673B2Z3", state: "Kerala", stateCode: "32"
     }
   ]
   title = 'cisko_invoice';
